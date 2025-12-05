@@ -4,33 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Books — Saroj Anand</title>
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Georgia', 'Times New Roman', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <h1><a href="index.html">Saroj Anand</a></h1>
-      <nav>
-        <a href="books.html">books</a>
-        <a href="about.html">about</a>
+<body class="bg-zinc-950 text-zinc-300 font-serif text-xl leading-relaxed min-h-screen">
+  <div class="max-w-2xl mx-auto px-6 py-16 md:py-24">
+    <header class="mb-16">
+      <h1 class="text-3xl md:text-4xl tracking-wide">
+        <a href="index.html" class="text-zinc-100 hover:text-amber-500 transition-colors">Saroj Anand</a>
+      </h1>
+      <nav class="mt-6 space-x-6 text-lg">
+        <a href="books.html" class="text-amber-600 hover:text-amber-500 transition-colors">books</a>
+        <a href="about.html" class="text-amber-600 hover:text-amber-500 transition-colors">about</a>
       </nav>
     </header>
 
     <main>
-      <h2>Books</h2>
+      <h2 class="text-2xl md:text-3xl text-zinc-100 mb-10">Books</h2>
 
-      <div class="book">
-        <h3>The Quiet Tide</h3>
-        <div class="genre">Psychological Thriller</div>
-        <div class="blurb">
+      <div class="mb-12">
+        <h3 class="text-xl md:text-2xl text-zinc-100 mb-2">The Quiet Tide</h3>
+        <div class="text-base text-zinc-500 mb-4">Psychological Thriller</div>
+        <div class="mb-6">
           <p><!-- PASTE YOUR BLURB HERE --></p>
         </div>
-        <div class="buy-links">
+        <div class="space-x-4 text-lg">
           <!-- UPDATE THESE LINKS WHEN LIVE -->
-          <a href="#">Amazon</a>
-          <a href="#">Kobo</a>
-          <a href="#">Apple Books</a>
-          <a href="#">Other stores</a>
+          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Amazon</a>
+          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Kobo</a>
+          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Apple Books</a>
+          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Other stores</a>
         </div>
       </div>
 
@@ -38,7 +51,7 @@
 
     </main>
 
-    <footer>
+    <footer class="mt-24 pt-8 border-t border-zinc-800 text-zinc-600 text-base">
       &copy; 2025 Saroj Anand
     </footer>
   </div>
