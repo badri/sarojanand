@@ -22,14 +22,35 @@ India print editions of both are still pending.
 Static pages, no build step, no framework. Open any file in a browser to check
 a change.
 
+Everything that gets published lives in `public/`. Nothing outside it is
+deployed, which is the point: `content/`, `memory/` and the planning notes stay
+in the repo but off the public web.
+
 | File | What it is |
 |---|---|
-| `index.html` | Home: Divya hero, intro blurb, both books, latest journal post, newsletter signup |
-| `books.html` | Full entry per book, with the buy links |
-| `blog.html` | Journal index |
-| `posts/*.html` | One file per post |
-| `about.html` | Bio and contact |
-| `images/` | Cover art and author photo |
+| `public/index.html` | Home: Divya hero, intro blurb, both books, latest journal post, newsletter signup |
+| `public/books.html` | Full entry per book, with the buy links |
+| `public/blog.html` | Journal index |
+| `public/posts/*.html` | One file per post |
+| `public/about.html` | Bio and contact |
+| `public/images/` | Cover art and author photo |
+
+## Deploying
+
+Cloudflare Pages, connected to this GitHub repo. The build settings are:
+
+| Field | Value |
+|---|---|
+| Production branch | `main` |
+| Framework preset | None |
+| Build command | *(empty)* |
+| Build output directory | `public` |
+| Root directory | `/` |
+
+No environment variables. Pushing to `main` deploys.
+
+Keep new publishable files inside `public/`. Anything added at the repo root is
+private by construction.
 
 Styling is Tailwind v4 (`@tailwindcss/browser@4`) plus daisyUI 5, both from a
 CDN, with one custom dark theme declared in a `<style type="text/tailwindcss">`
@@ -46,19 +67,19 @@ block at the top of every page. Icons are Lucide from a CDN.
 
 ### Adding a post
 
-Copy `posts/the-temple-that-shouldnt-exist.html`, replace the title, date,
-reading time and body, then add an `<li>` to the list in `blog.html` — there is
-a comment marking the spot. Update the featured post on `index.html` if you want
+Copy `public/posts/the-temple-that-shouldnt-exist.html`, replace the title, date,
+reading time and body, then add an `<li>` to the list in `public/blog.html` — there is
+a comment marking the spot. Update the featured post on `public/index.html` if you want
 the new one on the front page.
 
 ### Still to do
 
-- Paste the MailerLite embed into `index.html`, inside the
+- Paste the MailerLite embed into `public/index.html`, inside the
   `<div class="ml-form-embed">` container in the newsletter section, deleting the
   mock form that is in there now. That is the only form on the site; every other
   page links to it, so there is one embed to maintain.
-- Fill in the store links on `books.html`. They are `href="#"` today.
-- Get cover art for *Partners in Crime*. Its slot on `books.html` is a
+- Fill in the store links on `public/books.html`. They are `href="#"` today.
+- Get cover art for *Partners in Crime*. Its slot on `public/books.html` is a
   typographic panel standing in for the missing cover.
 - When the store opens, look for the `STORE LATER` comments. They mark the rows
   where a price and a buy button drop in without moving anything else.
