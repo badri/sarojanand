@@ -1,0 +1,57 @@
+/* Source stylesheet for the site.
+   Build it with:  npm run build:css
+   Output:         public/assets/site.css  (this is what the pages load) */
+
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* Only the published pages are scanned for class names. */
+@source "../public/**/*.html";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+@plugin "daisyui/theme" {
+  name: "saroj";
+  default: true;
+  color-scheme: dark;
+
+  --color-base-100: oklch(13% 0.008 260);
+  --color-base-200: oklch(18% 0.010 260);
+  --color-base-300: oklch(24% 0.012 260);
+  --color-base-content: oklch(88% 0.010 260);
+
+  --color-primary: oklch(52% 0.211 26);
+  --color-primary-content: oklch(97% 0.010 26);
+  --color-secondary: oklch(70% 0.150 55);
+  --color-secondary-content: oklch(16% 0.030 55);
+  --color-accent: oklch(78% 0.130 200);
+  --color-accent-content: oklch(16% 0.030 200);
+  --color-neutral: oklch(22% 0.010 260);
+  --color-neutral-content: oklch(92% 0.008 260);
+
+  --color-info: oklch(78% 0.130 220);
+  --color-info-content: oklch(16% 0.030 220);
+  --color-success: oklch(70% 0.140 155);
+  --color-success-content: oklch(16% 0.030 155);
+  --color-warning: oklch(80% 0.150 85);
+  --color-warning-content: oklch(18% 0.030 85);
+  --color-error: oklch(58% 0.220 26);
+  --color-error-content: oklch(97% 0.010 26);
+
+  --radius-selector: 0.125rem;
+  --radius-field: 0.125rem;
+  --radius-box: 0.125rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+}

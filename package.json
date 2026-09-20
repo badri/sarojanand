@@ -1,0 +1,30 @@
+{
+  "name": "sarojanand-site",
+  "version": "1.0.0",
+  "description": "Pen name for the fiction: thrillers and science fiction, Indian settings, global genre conventions. Non-fiction stays under Lakshmi Narasimhan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i src/app.css -o public/assets/site.css --minify",
+    "watch:css": "tailwindcss -i src/app.css -o public/assets/site.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/badri/sarojanand.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/badri/sarojanand/issues"
+  },
+  "homepage": "https://github.com/badri/sarojanand#readme",
+  "private": "true",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "daisyui": "^5.7.42",
+    "lucide-static": "^1.47.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

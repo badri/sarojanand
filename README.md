@@ -52,18 +52,39 @@ No environment variables. Pushing to `main` deploys.
 Keep new publishable files inside `public/`. Anything added at the repo root is
 private by construction.
 
-Styling is Tailwind v4 (`@tailwindcss/browser@4`) plus daisyUI 5, both from a
-CDN, with one custom dark theme declared in a `<style type="text/tailwindcss">`
-block at the top of every page. Icons are Lucide from a CDN.
+The pages load nothing from a CDN. Everything is served from `public/`:
+one compiled stylesheet, self-hosted fonts, and the icons inlined as an SVG
+sprite. A visitor fetches about 510 KB, most of it the two photographs, and the
+site keeps working if any third party is down or blocked.
 
-**Two gotchas if you edit the pages:**
+### The stylesheet
 
-- The theme block must stay `@theme static`, not `@theme`. Plain `@theme` only
-  emits the variables a Tailwind utility on that page happens to use, so a page
-  whose only red thing is a daisyUI class like `btn-primary` silently falls back
-  to daisyUI's default indigo.
-- The shell (head, navbar, footer) is copy-pasted into each page, because there
-  is no build step. Change the nav and you change it in five places.
+`public/assets/site.css` is generated, not hand-edited. Its source is
+`src/app.css` — Tailwind v4 plus daisyUI 5, with the dark theme declared once in
+a `@plugin "daisyui/theme"` block.
+
+```
+npm install        # once
+npm run build:css  # after changing classes in any page, or the theme
+npm run watch:css  # or leave this running while editing
+```
+
+**Rebuild and commit `site.css` whenever you add a class that no page used
+before.** Tailwind only includes the classes it finds in `public/**/*.html`, so
+a brand-new utility will do nothing until you rebuild. Existing classes are
+already in the file, so ordinary copy-editing needs no rebuild.
+
+### Icons
+
+Each page carries an SVG sprite just inside `<body>` with only the icons that
+page uses, and each icon is a `<svg><use href="#i-name"/></svg>`. To use a new
+one, copy its paths from `node_modules/lucide-static/icons/` into the sprite as
+another `<symbol>`. There is no icon JavaScript.
+
+### One gotcha
+
+The shell (head, navbar, footer, sprite) is copy-pasted into each page, because
+there is no templating. Change the nav and you change it in five places.
 
 ### Adding a post
 
