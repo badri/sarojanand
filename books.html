@@ -1,73 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books — Saroj Anand</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['Georgia', 'Times New Roman', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Saroj Anand</title>
+<meta name="description" content="The novels of Saroj Anand: Divya, a techno-thriller set in Chennai, and Partners in Crime, a psychological thriller set in the Andaman Islands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5/daisyui.css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style type="text/tailwindcss">
+  @theme static {
+    --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+    --font-mono: "Share Tech Mono", ui-monospace, monospace;
+
+    --color-base-100: oklch(13% 0.008 260);
+    --color-base-200: oklch(18% 0.010 260);
+    --color-base-300: oklch(24% 0.012 260);
+    --color-base-content: oklch(88% 0.010 260);
+
+    --color-primary: oklch(52% 0.211 26);
+    --color-primary-content: oklch(97% 0.010 26);
+    --color-secondary: oklch(70% 0.150 55);
+    --color-secondary-content: oklch(16% 0.030 55);
+    --color-accent: oklch(78% 0.130 200);
+    --color-accent-content: oklch(16% 0.030 200);
+    --color-neutral: oklch(22% 0.010 260);
+    --color-neutral-content: oklch(92% 0.008 260);
+
+    --color-info: oklch(78% 0.130 220);
+    --color-info-content: oklch(16% 0.030 220);
+    --color-success: oklch(70% 0.140 155);
+    --color-success-content: oklch(16% 0.030 155);
+    --color-warning: oklch(80% 0.150 85);
+    --color-warning-content: oklch(18% 0.030 85);
+    --color-error: oklch(58% 0.220 26);
+    --color-error-content: oklch(97% 0.010 26);
+
+    --radius-selector: 0.125rem;
+    --radius-field: 0.125rem;
+    --radius-box: 0.125rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+</style>
 </head>
-<body class="bg-zinc-950 text-zinc-300 font-serif text-xl leading-relaxed min-h-screen">
-  <div class="max-w-2xl mx-auto px-6 py-16 md:py-24">
-    <header class="mb-16">
-      <h1 class="text-3xl md:text-4xl tracking-wide">
-        <a href="index.html" class="text-zinc-100 hover:text-amber-500 transition-colors">Saroj Anand</a>
-      </h1>
-      <nav class="mt-6 space-x-6 text-lg">
-        <a href="books.html" class="text-amber-600 hover:text-amber-500 transition-colors">books</a>
-        <a href="about.html" class="text-amber-600 hover:text-amber-500 transition-colors">about</a>
-      </nav>
-    </header>
+<body class="bg-base-100 text-base-content font-sans antialiased">
 
-    <main>
-      <h2 class="text-2xl md:text-3xl text-zinc-100 mb-10">Books</h2>
-
-      <div class="mb-16">
-        <h3 class="text-xl md:text-2xl text-zinc-100 mb-2">Divya</h3>
-        <div class="text-base text-zinc-500 mb-4">Techno-thriller &middot; coming soon</div>
-        <div class="mb-6 space-y-4">
-          <p>On the night of her marriage, Divya leaves her home in her husband's car.</p>
-          <p>She takes a gun nobody knew she owned. At the gate she stops for the barrier, calm, and drives out into the dark at three in the morning.</p>
-          <p>Her road runs into two other men. A Chennai policeman who cannot close a file, and who keeps working a case his own station closed a week ago. And an old swami on the bank of the Ganga, loved by millions, who teaches that everything a person holds passes, and that none of it ever belonged to them.</p>
-          <p>Whatever went wrong in that flat, no law covers it. It runs like a system, and it ran long before Divya drew breath.</p>
-        </div>
-        <div class="text-zinc-500 text-lg">Links go here once the listings are live.</div>
-      </div>
-
-      <div class="mb-12">
-        <h3 class="text-xl md:text-2xl text-zinc-100 mb-2">Partners in Crime</h3>
-        <div class="text-base text-zinc-500 mb-4">Psychological thriller</div>
-        <div class="mb-6 space-y-4">
-          <p>Arun has everything figured out. A thriving tech company, a family he adores, a life built on careful decisions and controlled outcomes. When he books a vacation to the Andaman Islands, he expects nothing more than turquoise water, lazy mornings, and uninterrupted time with his wife and daughters.</p>
-          <p>But the island has other plans.</p>
-          <p>Trapped with nowhere to run, Arun finds that some debts don't dissolve with time. Some reckonings arrive quietly, patiently, wearing familiar faces and carrying the weight of everything left unsaid.</p>
-        </div>
-        <div class="space-x-4 text-lg">
-          <!-- TODO: paste the real store URLs -->
-          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Amazon</a>
-          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Kobo</a>
-          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Apple Books</a>
-          <a href="#" class="text-amber-600 hover:text-amber-500 transition-colors">Other stores</a>
-        </div>
-      </div>
-
-      <!-- ADD MORE BOOKS HERE AS YOU PUBLISH -->
-
-    </main>
-
-    <footer class="mt-24 pt-8 border-t border-zinc-800 text-zinc-600 text-base">
-      &copy; 2026 Saroj Anand
-    </footer>
+<!-- ================= NAV ================= -->
+<div class="navbar sticky top-0 z-30 border-b border-base-300 bg-base-100/95 px-4 backdrop-blur sm:px-8">
+  <div class="navbar-start">
+    <div class="tooltip tooltip-bottom lg:hidden" data-tip="Open menu">
+      <button class="btn btn-sm btn-ghost btn-square" popovertarget="main-menu"
+              style="anchor-name:--main-menu" aria-label="Open menu">
+        <i data-lucide="menu" class="size-5"></i>
+      </button>
+    </div>
+    <ul class="dropdown menu menu-sm bg-base-200 rounded-box z-1 mt-3 w-56 p-2 shadow" popover id="main-menu"
+        style="position-anchor:--main-menu">
+      <li><a href="books.html"><i data-lucide="book-open" class="size-4"></i>Books</a></li>
+      <li><a href="blog.html"><i data-lucide="file-text" class="size-4"></i>Journal</a></li>
+      <li><a href="about.html"><i data-lucide="user" class="size-4"></i>About</a></li>
+      <li><a href="index.html#newsletter"><i data-lucide="mail" class="size-4"></i>Newsletter</a></li>
+    </ul>
+    <a href="index.html" class="ps-2 font-display text-lg font-bold uppercase tracking-[0.35em] text-base-content">
+      Saroj Anand
+    </a>
   </div>
+  <div class="navbar-end hidden lg:flex">
+    <ul class="menu menu-horizontal gap-1 font-mono text-sm uppercase tracking-widest">
+      <li><a href="books.html"><i data-lucide="book-open" class="size-4"></i>Books</a></li>
+      <li><a href="blog.html"><i data-lucide="file-text" class="size-4"></i>Journal</a></li>
+      <li><a href="about.html"><i data-lucide="user" class="size-4"></i>About</a></li>
+    </ul>
+    <a href="index.html#newsletter" class="btn btn-sm btn-primary ms-2 font-mono uppercase tracking-widest">
+      <i data-lucide="mail" class="size-4"></i>Newsletter
+    </a>
+  </div>
+</div>
+
+<section class="border-b border-base-300">
+  <div class="mx-auto max-w-6xl px-6 py-14 lg:py-20">
+    <p class="font-mono text-xs uppercase tracking-[0.3em] text-base-content/50">Two novels, a third in progress</p>
+    <h1 class="mt-4 font-display text-5xl font-bold uppercase leading-none tracking-tight sm:text-6xl">Books</h1>
+    <p class="mt-6 max-w-2xl text-xl leading-relaxed text-base-content/70">Both stand alone. Read them in any order.</p>
+  </div>
+</section>
+
+<!-- ================= DIVYA ================= -->
+<section id="divya" class="scroll-mt-20 border-b border-base-300">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[minmax(0,18rem)_1fr] lg:gap-16 lg:py-20">
+    <figure class="mx-auto w-56 sm:w-64 lg:mx-0 lg:w-full">
+      <img src="images/divya-cover.jpg" width="900" height="1440"
+           alt="Cover of the novel Divya: a woman holding a pistol, seen through cracked glass"
+           class="aspect-10/16 w-full border border-base-300 object-cover shadow-2xl">
+    </figure>
+
+    <div>
+      <h2 class="font-display text-5xl font-bold uppercase leading-none tracking-tight">
+        Divya <span class="badge badge-lg badge-soft align-middle font-sans">Coming soon</span>
+      </h2>
+      <p class="mt-4 font-mono text-xs uppercase tracking-[0.3em] text-base-content/55">
+        Sci-fi techno-thriller · Chennai · book two
+      </p>
+
+      <div class="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed">
+        <p>On the night of her marriage, Divya leaves her home in her husband's car.</p>
+        <p>
+          She takes a gun nobody knew she owned. At the gate she stops for the barrier, calm, and drives
+          out into the dark at three in the morning.
+        </p>
+        <p>
+          Her road runs into two other men. A Chennai policeman who cannot close a file, and who keeps
+          working a case his own station closed a week ago. And an old swami on the bank of the Ganga,
+          loved by millions, who teaches that everything a person holds passes, and that none of it ever
+          belonged to them.
+        </p>
+        <p>
+          Whatever went wrong in that flat, no law covers it. It runs like a system, and it ran long
+          before Divya drew breath.
+        </p>
+      </div>
+
+      <div class="mt-10 border-t border-base-300 pt-6">
+        <p class="font-mono text-xs uppercase tracking-widest text-base-content/50">Where to buy</p>
+        <p class="mt-3 text-base-content/70">
+          Not on sale yet. It goes up on Kindle first, then Kobo and the other stores.
+          <a href="index.html#newsletter" class="link link-primary">Join the newsletter</a>
+          and you will hear the day it does.
+        </p>
+        <a href="index.html#newsletter" class="btn btn-primary mt-6 font-mono uppercase tracking-widest">
+          <i data-lucide="bell" class="size-4"></i>Tell me when it's out
+        </a>
+        <!-- STORE LATER: replace this block with price + store links + a "Buy direct" button. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARTNERS IN CRIME ================= -->
+<section id="partners-in-crime" class="scroll-mt-20 border-b border-base-300 bg-base-200">
+  <div class="mx-auto grid max-w-6xl gap-10 px-6 py-14 lg:grid-cols-[minmax(0,18rem)_1fr] lg:gap-16 lg:py-20">
+    <!-- no cover art exists for this title yet, so type stands in for it -->
+    <div class="mx-auto flex aspect-10/16 w-56 items-center justify-center border border-base-300 bg-base-100 p-6 text-center sm:w-64 lg:mx-0 lg:w-full">
+      <span class="font-display text-2xl uppercase leading-tight tracking-widest text-base-content/60">
+        Partners<br>in<br>Crime
+      </span>
+    </div>
+
+    <div>
+      <h2 class="font-display text-5xl font-bold uppercase leading-none tracking-tight">
+        Partners in Crime <span class="badge badge-lg badge-soft align-middle font-sans">Out now</span>
+      </h2>
+      <p class="mt-4 font-mono text-xs uppercase tracking-[0.3em] text-base-content/55">
+        Psychological thriller · Andaman Islands · book one
+      </p>
+
+      <div class="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed">
+        <p>
+          Arun has everything figured out. A thriving tech company, a family he adores, a life built on
+          careful decisions and controlled outcomes. When he books a vacation to the Andaman Islands, he
+          expects nothing more than turquoise water, lazy mornings, and uninterrupted time with his wife
+          and daughters.
+        </p>
+        <p>But the island has other plans.</p>
+        <p>
+          Trapped with nowhere to run, Arun finds that some debts don't dissolve with time. Some
+          reckonings arrive quietly, patiently, wearing familiar faces and carrying the weight of
+          everything left unsaid.
+        </p>
+      </div>
+
+      <div class="mt-10 border-t border-base-300 pt-6">
+        <p class="font-mono text-xs uppercase tracking-widest text-base-content/50">Where to buy</p>
+        <!-- TODO: paste the real store URLs over the "#" below. -->
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="#" class="btn btn-sm btn-outline font-mono uppercase tracking-widest">Amazon</a>
+          <a href="#" class="btn btn-sm btn-outline font-mono uppercase tracking-widest">Kobo</a>
+          <a href="#" class="btn btn-sm btn-outline font-mono uppercase tracking-widest">Apple Books</a>
+          <a href="#" class="btn btn-sm btn-outline font-mono uppercase tracking-widest">Other stores</a>
+        </div>
+        <!-- STORE LATER: a price + "Buy direct (EPUB)" button joins this row. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD THE NEXT BOOK HERE: copy one of the sections above and change the id, title and copy. -->
+
+<!-- ================= IN PROGRESS ================= -->
+<section class="border-b border-base-300">
+  <div class="mx-auto max-w-6xl px-6 py-14">
+    <h2 class="font-display text-2xl font-bold uppercase tracking-tight">In progress</h2>
+    <p class="mt-3 max-w-2xl text-base-content/70">
+      A third novel is being drafted. No title, no date, and nothing worth promising yet.
+      The newsletter gets the news before this page does.
+    </p>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER CTA ================= -->
+<section class="border-t border-base-300 bg-base-200">
+  <div class="mx-auto max-w-3xl px-6 py-14 text-center lg:py-20">
+    <i data-lucide="mail" class="mx-auto mb-5 size-7 text-base-content/70"></i>
+    <h2 class="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Get the next one first</h2>
+    <p class="mx-auto mt-4 max-w-xl text-base-content/70">
+      Release dates, the odd deleted chapter, and the research notes that did not fit.
+      Once a month at most.
+    </p>
+    <a href="index.html#newsletter" class="btn btn-primary mt-8 font-mono uppercase tracking-widest">
+      <i data-lucide="bell" class="size-4"></i>Sign up
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer sm:footer-horizontal mx-auto max-w-6xl px-6 py-12">
+  <aside>
+    <p class="font-display text-base uppercase tracking-[0.3em]">Saroj Anand</p>
+    <p class="text-sm text-base-content/60">Thrillers from India<br>&copy; 2026 · all rights reserved</p>
+  </aside>
+  <nav>
+    <h6 class="footer-title">Read</h6>
+    <a href="books.html" class="link link-hover">Books</a>
+    <a href="blog.html" class="link link-hover">Journal</a>
+    <a href="about.html" class="link link-hover">About</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Elsewhere</h6>
+    <a href="index.html#newsletter" class="link link-hover">Newsletter</a>
+    <a href="mailto:hello@sarojanandbooks.com" class="link link-hover">Email the author</a>
+  </nav>
+</footer>
+
+<script>lucide.createIcons();</script>
 </body>
 </html>

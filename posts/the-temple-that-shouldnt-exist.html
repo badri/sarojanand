@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The temple that shouldn't exist — Saroj Anand</title>
+<meta name="description" content="On lost engineering traditions, impossible tonnages, and the question we are afraid to ask.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@5/daisyui.css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style type="text/tailwindcss">
+  @theme static {
+    --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+    --font-mono: "Share Tech Mono", ui-monospace, monospace;
+
+    --color-base-100: oklch(13% 0.008 260);
+    --color-base-200: oklch(18% 0.010 260);
+    --color-base-300: oklch(24% 0.012 260);
+    --color-base-content: oklch(88% 0.010 260);
+
+    --color-primary: oklch(52% 0.211 26);
+    --color-primary-content: oklch(97% 0.010 26);
+    --color-secondary: oklch(70% 0.150 55);
+    --color-secondary-content: oklch(16% 0.030 55);
+    --color-accent: oklch(78% 0.130 200);
+    --color-accent-content: oklch(16% 0.030 200);
+    --color-neutral: oklch(22% 0.010 260);
+    --color-neutral-content: oklch(92% 0.008 260);
+
+    --color-info: oklch(78% 0.130 220);
+    --color-info-content: oklch(16% 0.030 220);
+    --color-success: oklch(70% 0.140 155);
+    --color-success-content: oklch(16% 0.030 155);
+    --color-warning: oklch(80% 0.150 85);
+    --color-warning-content: oklch(18% 0.030 85);
+    --color-error: oklch(58% 0.220 26);
+    --color-error-content: oklch(97% 0.010 26);
+
+    --radius-selector: 0.125rem;
+    --radius-field: 0.125rem;
+    --radius-box: 0.125rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+</style>
+</head>
+<body class="bg-base-100 text-base-content font-sans antialiased">
+
+<!-- ================= NAV ================= -->
+<div class="navbar sticky top-0 z-30 border-b border-base-300 bg-base-100/95 px-4 backdrop-blur sm:px-8">
+  <div class="navbar-start">
+    <div class="tooltip tooltip-bottom lg:hidden" data-tip="Open menu">
+      <button class="btn btn-sm btn-ghost btn-square" popovertarget="post-menu"
+              style="anchor-name:--post-menu" aria-label="Open menu">
+        <i data-lucide="menu" class="size-5"></i>
+      </button>
+    </div>
+    <ul class="dropdown menu menu-sm bg-base-200 rounded-box z-1 mt-3 w-56 p-2 shadow" popover id="post-menu"
+        style="position-anchor:--post-menu">
+      <li><a href="../books.html"><i data-lucide="book-open" class="size-4"></i>Books</a></li>
+      <li><a href="../blog.html"><i data-lucide="file-text" class="size-4"></i>Journal</a></li>
+      <li><a href="../about.html"><i data-lucide="user" class="size-4"></i>About</a></li>
+      <li><a href="../index.html#newsletter"><i data-lucide="mail" class="size-4"></i>Newsletter</a></li>
+    </ul>
+    <a href="../index.html" class="ps-2 font-display text-lg font-bold uppercase tracking-[0.35em] text-base-content">
+      Saroj Anand
+    </a>
+  </div>
+  <div class="navbar-end hidden lg:flex">
+    <ul class="menu menu-horizontal gap-1 font-mono text-sm uppercase tracking-widest">
+      <li><a href="../books.html"><i data-lucide="book-open" class="size-4"></i>Books</a></li>
+      <li><a href="../blog.html"><i data-lucide="file-text" class="size-4"></i>Journal</a></li>
+      <li><a href="../about.html"><i data-lucide="user" class="size-4"></i>About</a></li>
+    </ul>
+    <a href="../index.html#newsletter" class="btn btn-sm btn-primary ms-2 font-mono uppercase tracking-widest">
+      <i data-lucide="mail" class="size-4"></i>Newsletter
+    </a>
+  </div>
+</div>
+
+<article class="mx-auto max-w-3xl px-6 py-14 lg:py-20">
+
+  <nav class="mb-8 font-mono text-xs uppercase tracking-widest text-base-content/50">
+    <a href="../blog.html" class="link link-hover inline-flex items-center gap-2">
+      <i data-lucide="arrow-left" class="size-3"></i>The journal
+    </a>
+  </nav>
+
+  <header class="border-b border-base-300 pb-8">
+    <h1 class="font-display text-4xl font-bold uppercase leading-tight tracking-tight sm:text-5xl">
+      The temple that shouldn't exist
+    </h1>
+    <p class="mt-6 text-xl leading-relaxed text-base-content/75">
+      On lost engineering traditions, impossible tonnages, and the question we are afraid to ask:
+      what if we have forgotten more than we ever learned?
+    </p>
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <time datetime="2026-09-20" class="font-mono text-xs uppercase tracking-widest text-base-content/50">
+        20 September 2026
+      </time>
+      <span class="badge badge-sm badge-soft">Engineering mysteries</span>
+      <span class="flex items-center gap-1 font-mono text-xs text-base-content/50">
+        <i data-lucide="clock" class="size-3"></i>6 min read
+      </span>
+    </div>
+  </header>
+
+  <div class="mt-10 space-y-6 text-lg leading-relaxed">
+
+    <p>
+      There is a temple in Maharashtra that defies explanation. Not because it is old, though it is, or
+      because it is beautiful, though it is, but because of what is <em>missing</em>.
+    </p>
+    <p>
+      The Kailasa Temple at Ellora was carved from a single cliff face sometime around 760 CE. When I say
+      carved, I mean someone took a mountain and removed everything that was not a temple. Top to bottom.
+      Basement to roof.
+    </p>
+    <p class="border-s-2 border-primary ps-6 font-display text-2xl leading-snug">
+      They removed roughly 200,000 tonnes of solid rock to do it.
+    </p>
+    <p>
+      Let me put that in perspective. A modern quarry using dynamite, bulldozers and hydraulic excavators
+      can remove about 1,000 to 1,500 tonnes a day under ideal conditions. At that rate the Kailasa Temple
+      would take 133 days of continuous work.
+    </p>
+    <p>Except they did not have dynamite. Or bulldozers. Or hydraulics.</p>
+    <p>
+      They had chisels, and hammers, and, if the traditional accounts are right, about eighteen years to
+      finish the job. That is thirty tonnes of rock a day, every day, for eighteen years, with hand tools.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">The maths does not close</h2>
+    <p>
+      I am an engineer by training, so I did the calculation the way engineers do: badly, with a lot of
+      assumptions, but well enough to know when something smells wrong.
+    </p>
+    <p>
+      Be generous. Say they had 500 workers on site at any time, a large crew for eighth-century India.
+      That is sixty kilograms of rock per worker per day. Not carved. Not shaped. Not transported. Just
+      removed and discarded somewhere down the cliff. Every day, for 6,570 days straight.
+    </p>
+    <p>
+      Double the workforce to a thousand and each worker only has to shift thirty kilograms a day. That is
+      still hauling a small child's weight in shattered basalt down a cliff face, day in and day out, while
+      someone else is carving three-storey pillars and life-size elephants out of what is left. And we have
+      not talked about the basement levels yet.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">The Sigiriya problem</h2>
+    <p>
+      You know what else should not exist? Sigiriya, in Sri Lanka. A two-hundred-metre rock fortress built
+      around 480 CE. Not built on top of a rock, which would be pedestrian. This one has its palace carved
+      into the rock, with water gardens at the base, ramparts halfway up, and a citadel at the summit that
+      required hauling every stone, every brick and every ounce of plaster up sheer cliff walls.
+    </p>
+    <p>
+      The hydraulics alone are remarkable: pressurised fountains that still work fifteen hundred years
+      later, with no pumps. Just gravity and judgement.
+    </p>
+    <p>
+      And the same culture left no written record of how it was done. No drawings. No engineering treatises.
+      It is as if someone built the Hoover Dam and forgot to mention it.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">The uncomfortable question</h2>
+    <p>
+      Here is an idea that will make archaeologists wince. What if there <em>was</em> a systematic
+      engineering tradition in ancient India and Sri Lanka, one sophisticated enough to move mountains with
+      pre-industrial tools, and we lost it?
+    </p>
+    <p>
+      Not lost like misplacing your keys. Lost like the Library of Alexandria. Lost like Greek fire. Lost
+      like Roman concrete, which we only worked out again in the twenty-first century, two thousand years
+      late.
+    </p>
+    <p>
+      What if the knowledge to build Kailasa and Sigiriya was neither mystical nor alien, but simply
+      written down on materials that did not survive? Palm leaf rots in a century. Oral traditions die with
+      their last speaker. If your entire engineering corpus sits on perishable media and your civilisation
+      takes a few hard knocks — invasions, famines, a shifting climate — you can go from carving mountains
+      to forgetting how to read in two generations.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">The Silurian hypothesis</h2>
+    <p>
+      Here is where it gets strange. There is a thought experiment in climate science called the Silurian
+      hypothesis. The name comes from <em>Doctor Who</em>; the question is serious.
+    </p>
+    <p class="border-s-2 border-primary ps-6 font-display text-2xl leading-snug">
+      If an industrial civilisation existed on Earth fifty million years ago, would we know?
+    </p>
+    <p>
+      Fifty million years is a long time. Continents drift. Mountains rise and erode. Coastlines drown and
+      resurface. What survives?
+    </p>
+    <p>
+      Not much. Plastics degrade in centuries. Steel rusts into oxide dust. Concrete crumbles. Cities built
+      on coastlines, which is where most are, get swallowed by subduction. Even radioactive waste, the thing
+      we assume will haunt the Earth forever, decays or ends up under kilometres of sediment.
+    </p>
+    <p>
+      What is left is subtle: odd carbon isotope ratios in ancient rock, unexplained spikes in rare earth
+      elements, perhaps some synthetic molecules trapped in deep ice.
+    </p>
+    <p>
+      But a temple carved into a mountain? A palace cut into a rock? Those could survive. And if we found
+      them with no context for the people who built them, we would look at the arithmetic and think:
+      this should not be possible.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">The canon we forgot</h2>
+    <p>
+      I do not actually think the Kailasa Temple was built by a lost fifty-million-year-old civilisation,
+      though it would make a fine novel.
+    </p>
+    <p>
+      But I do think we underestimate how much knowledge humanity has lost, and overestimate how much we
+      have always known. Damascus steel. Roman aqueducts. The Antikythera mechanism, a two-thousand-year-old
+      analogue computer. Viking sunstones. Chinese earthquake detectors from 132 CE. And Kailasa, and
+      Sigiriya, and dozens of other structures that make modern engineers scratch their heads.
+    </p>
+    <p>
+      Maybe the answer is not aliens or magic or ancient astronauts. Maybe the answer is that they knew
+      things, they wrote them down, and the books burned.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">The canon we are building</h2>
+    <p>
+      The hopeful flip side: we live in an age where knowledge is harder to lose. Every Wikipedia edit,
+      every arXiv preprint, every repository, every answered question, every video on building a forge in
+      your garden. A distributed, redundant, globally reachable canon that does not depend on one library
+      in Alexandria or one monastery in Timbuktu.
+    </p>
+    <p>
+      When future archaeologists dig through our digital strata, they will not have to guess how we carved
+      temples. They will have the CAD files.
+    </p>
+    <p>
+      But they might still wonder why we stopped. Why the people who built Kailasa did not build a hundred
+      more. Why the engineers who designed Sigiriya's hydraulics did not pass that knowledge down in a form
+      that survived. And why, having seen their silence, we are so confident it will not happen to us.
+    </p>
+
+    <h2 class="pt-6 font-display text-3xl font-bold uppercase tracking-tight">Coda: the trace that survives</h2>
+    <p>
+      If a civilisation existed fifty million years ago, what trace would survive? Probably not cities.
+      Probably not books. Probably not monuments.
+    </p>
+    <p>
+      But carved mountains? Basalt temples cut into cliffs? Structures so massive and so simple that they
+      outlast everything else? Those might.
+    </p>
+    <p>
+      And if you were a member of that lost civilisation, and you knew your world was ending, and you
+      wanted to leave a message that would outlast continents —
+    </p>
+    <p class="font-display text-2xl leading-snug">What would you carve into a mountain?</p>
+  </div>
+
+  <aside class="mt-12 border-t border-base-300 pt-8">
+    <h2 class="font-mono text-xs uppercase tracking-widest text-base-content/50">Further reading</h2>
+    <ul class="mt-4 space-y-2">
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Kailasa_Temple,_Ellora" rel="noopener" target="_blank"
+           class="link link-hover inline-flex items-center gap-2">
+          Kailasa Temple, Ellora, on Wikipedia
+          <i data-lucide="external-link" class="size-3"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://whc.unesco.org/en/list/202/" rel="noopener" target="_blank"
+           class="link link-hover inline-flex items-center gap-2">
+          The Sigiriya UNESCO listing
+          <i data-lucide="external-link" class="size-3"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.cambridge.org/core/journals/international-journal-of-astrobiology/article/silurian-hypothesis-would-it-be-possible-to-detect-an-industrial-civilization-in-the-geological-record/77818514AA6907750B8F2339F7C28CF"
+           rel="noopener" target="_blank" class="link link-hover inline-flex items-center gap-2">
+          The Silurian hypothesis, the original paper
+          <i data-lucide="external-link" class="size-3"></i>
+        </a>
+      </li>
+    </ul>
+  </aside>
+</article>
+
+<!-- ================= NEWSLETTER CTA ================= -->
+<section class="border-t border-base-300 bg-base-200">
+  <div class="mx-auto max-w-3xl px-6 py-14 text-center lg:py-20">
+    <i data-lucide="mail" class="mx-auto mb-5 size-7 text-base-content/70"></i>
+    <h2 class="font-display text-3xl font-bold uppercase tracking-tight sm:text-4xl">Get the next one first</h2>
+    <p class="mx-auto mt-4 max-w-xl text-base-content/70">
+      Release dates, the odd deleted chapter, and the research notes that did not fit.
+      Once a month at most.
+    </p>
+    <a href="../index.html#newsletter" class="btn btn-primary mt-8 font-mono uppercase tracking-widest">
+      <i data-lucide="bell" class="size-4"></i>Sign up
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer sm:footer-horizontal mx-auto max-w-6xl px-6 py-12">
+  <aside>
+    <p class="font-display text-base uppercase tracking-[0.3em]">Saroj Anand</p>
+    <p class="text-sm text-base-content/60">Thrillers from India<br>&copy; 2026 · all rights reserved</p>
+  </aside>
+  <nav>
+    <h6 class="footer-title">Read</h6>
+    <a href="../books.html" class="link link-hover">Books</a>
+    <a href="../blog.html" class="link link-hover">Journal</a>
+    <a href="../about.html" class="link link-hover">About</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">Elsewhere</h6>
+    <a href="../index.html#newsletter" class="link link-hover">Newsletter</a>
+    <a href="mailto:hello@sarojanandbooks.com" class="link link-hover">Email the author</a>
+  </nav>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
