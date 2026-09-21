@@ -188,8 +188,8 @@
             told anyone about. Some betrayals take twenty years to surface.
           </p>
           <div class="card-actions mt-2">
-            <!-- TODO: point this at the Amazon link once it is supplied -->
-            <a href="books.html#partners-in-crime" class="btn btn-sm btn-primary font-mono uppercase tracking-widest">
+            <!-- Books2Read sends each reader to their own store, Amazon included -->
+            <a href="https://books2read.com/u/bPq6yl" target="_blank" rel="noopener" class="btn btn-sm btn-primary font-mono uppercase tracking-widest">
               <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#i-shopping-cart"/></svg>Buy now
             </a>
           </div>
@@ -256,25 +256,40 @@
 
     <div class="mt-10 text-start">
       <!-- ============================================================
-           KIT SIGNUP — not wired yet.
-           This form needs Kit's form action URL and field names, taken
-           from the form's HTML embed. It stays styled in the site's own
-           design; no Kit JavaScript or CSS is loaded.
+           KIT SIGNUP — form 9942225.
+           Posts straight to Kit; no Kit JavaScript or CSS is loaded.
+           The script at the bottom of this page submits it in the
+           background and shows the confirmation below in place. If that
+           script can't run, the form still posts normally and Kit shows
+           its own confirmation page.
            This is the only signup form on the site; every other page
            links here, so there is one form to maintain.
            ============================================================ -->
-      <div class="newsletter-form">
-        <!-- placeholder: submitting does nothing until the Kit action is added -->
-        <form class="mx-auto max-w-md" onsubmit="return false">
-          <fieldset class="fieldset">
-            <label class="label font-mono text-xs uppercase tracking-widest" for="newsletter-email">Email address</label>
-            <div class="join w-full">
-              <input id="newsletter-email" type="email" required placeholder="you@example.com"
-                     class="input join-item w-full" autocomplete="email">
-              <button type="submit" class="btn btn-primary join-item font-mono uppercase tracking-widest">Sign up</button>
-            </div>
-          </fieldset>
-        </form>
+      <form id="newsletter-form" class="mx-auto max-w-md"
+            action="https://app.kit.com/forms/9942225/subscriptions" method="post">
+        <fieldset class="fieldset">
+          <label class="label font-mono text-xs uppercase tracking-widest" for="newsletter-email">Email address</label>
+          <div class="join w-full">
+            <input id="newsletter-email" name="email_address" type="email" required
+                   placeholder="you@example.com" class="input join-item w-full" autocomplete="email">
+            <button type="submit" class="btn btn-primary join-item font-mono uppercase tracking-widest">Sign up</button>
+          </div>
+        </fieldset>
+        <p id="newsletter-error" role="alert" class="mt-3 text-sm text-error" hidden></p>
+        <p class="mt-3 text-xs text-base-content/50">
+          You'll get one email to confirm. Unsubscribe from any issue with one click.
+        </p>
+      </form>
+
+      <div id="newsletter-done" class="mx-auto max-w-md border border-base-300 bg-base-100 p-6 text-center" hidden>
+        <svg class="mx-auto mb-4 size-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>
+        <h3 id="newsletter-done-heading" tabindex="-1" class="font-display text-2xl font-bold uppercase tracking-tight">
+          Check your inbox
+        </h3>
+        <p class="mt-3 text-base-content/70">
+          One more step: open the email that just arrived and click the link to confirm.
+          If it isn't there in a few minutes, look in Promotions or spam.
+        </p>
       </div>
     </div>
   </div>
@@ -299,5 +314,63 @@
   </nav>
 </footer>
 
+<script>
+  // Kit signup: submit in the background and confirm in place, the way Kit's own
+  // script does. Anything unexpected falls back to a normal post, so Kit shows its page.
+  (function () {
+    var form = document.getElementById('newsletter-form');
+    if (!form || !window.fetch) return;
+    var done = document.getElementById('newsletter-done');
+    var error = document.getElementById('newsletter-error');
+    var button = form.querySelector('button[type="submit"]');
+    var label = button.textContent;
+
+    function reset(message) {
+      error.textContent = message;
+      error.hidden = false;
+      button.disabled = false;
+      button.textContent = label;
+    }
+
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      error.hidden = true;
+      button.disabled = true;
+      button.textContent = 'Signing up…';
+
+      var data = new FormData(form);
+      data.append('referrer', document.referrer);
+      data.append('host', location.href);
+
+      try {
+        var res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' }
+        });
+        var json = res.ok ? await res.json() : null;
+
+        if (json && json.status === 'success') {
+          form.hidden = true;
+          done.hidden = false;
+          document.getElementById('newsletter-done-heading').focus();
+          return;
+        }
+        if (json && json.status === 'quarantined' && json.url) {
+          location.href = json.url; // Kit wants one extra verification step
+          return;
+        }
+        var messages = json && json.errors && json.errors.messages;
+        if (messages && messages.length) {
+          reset(messages.join(' '));
+          return;
+        }
+        throw new Error('unexpected response');
+      } catch (e) {
+        form.submit(); // hand over to Kit's own page
+      }
+    });
+  })();
+</script>
 </body>
 </html>

@@ -82,6 +82,29 @@ the site uses, so any icon works on any page. Each icon is a
 `node_modules/lucide-static/icons/` into the sprite as another `<symbol>` — in
 all five pages. There is no icon JavaScript.
 
+### Newsletter (Kit)
+
+The signup form is in the newsletter section of `public/index.html`, the only
+form on the site. It posts to Kit form `9942225`
+(`https://app.kit.com/forms/9942225/subscriptions`, field `email_address`).
+A short script at the bottom of that page submits it in the background and
+shows the "Check your inbox" confirmation in place. It handles Kit's three
+answers the way Kit's own script does: success, a list of errors shown under
+the field, or "quarantined", which sends the reader to Kit's verification page.
+If the script can't run, the form still posts normally and Kit shows its own page.
+
+No Kit JavaScript or CSS is loaded. If you switch to a different Kit form, change
+the form number in the `action` attribute; nothing else needs to change.
+
+### Store links
+
+| Book | Amazon | Everything else |
+|---|---|---|
+| Partners in Crime | `amazon.com/…/dp/B0H2HYD75F` | `books2read.com/u/bPq6yl` |
+
+The home page "Buy now" button uses the Books2Read link, because it sends each
+reader to their own regional store, Amazon included.
+
 ### One gotcha
 
 The shell (head, navbar, footer, sprite) is copy-pasted into each page, because
@@ -96,15 +119,8 @@ the new one on the front page.
 
 ### Still to do
 
-- **Wire the newsletter form to Kit.** The form in the newsletter section of
-  `public/index.html` is a styled placeholder that does nothing on submit. It
-  needs the action URL and field names from the Kit form's HTML embed
-  (Kit: Grow → Landing Pages & Forms → the form → Embed → HTML). It is the only
-  form on the site; every other page links to it.
-- **Fill in the Partners in Crime store links** on `public/books.html` (two
-  `href="#"` buttons: Amazon, and the Books2Read universal link from
-  Draft2Digital) and point the "Buy now" button on `public/index.html` at the
-  Amazon one.
+- Add Divya's store links to `public/books.html` once it is on sale, the same
+  way as Partners in Crime: an Amazon button and a Books2Read button.
 - When the store opens, look for the `STORE LATER` comments. They mark the rows
   where a price and a buy button drop in without moving anything else.
 
