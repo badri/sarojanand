@@ -76,10 +76,11 @@ already in the file, so ordinary copy-editing needs no rebuild.
 
 ### Icons
 
-Each page carries an SVG sprite just inside `<body>` with only the icons that
-page uses, and each icon is a `<svg><use href="#i-name"/></svg>`. To use a new
-one, copy its paths from `node_modules/lucide-static/icons/` into the sprite as
-another `<symbol>`. There is no icon JavaScript.
+Each page carries the same SVG sprite just inside `<body>`, holding every icon
+the site uses, so any icon works on any page. Each icon is a
+`<svg><use href="#i-name"/></svg>`. To add a new one, copy its paths from
+`node_modules/lucide-static/icons/` into the sprite as another `<symbol>` — in
+all five pages. There is no icon JavaScript.
 
 ### One gotcha
 
@@ -95,13 +96,15 @@ the new one on the front page.
 
 ### Still to do
 
-- Paste the MailerLite embed into `public/index.html`, inside the
-  `<div class="ml-form-embed">` container in the newsletter section, deleting the
-  mock form that is in there now. That is the only form on the site; every other
-  page links to it, so there is one embed to maintain.
-- Fill in the store links on `public/books.html`. They are `href="#"` today.
-- Get cover art for *Partners in Crime*. Its slot on `public/books.html` is a
-  typographic panel standing in for the missing cover.
+- **Wire the newsletter form to Kit.** The form in the newsletter section of
+  `public/index.html` is a styled placeholder that does nothing on submit. It
+  needs the action URL and field names from the Kit form's HTML embed
+  (Kit: Grow → Landing Pages & Forms → the form → Embed → HTML). It is the only
+  form on the site; every other page links to it.
+- **Fill in the Partners in Crime store links** on `public/books.html` (two
+  `href="#"` buttons: Amazon, and the Books2Read universal link from
+  Draft2Digital) and point the "Buy now" button on `public/index.html` at the
+  Amazon one.
 - When the store opens, look for the `STORE LATER` comments. They mark the rows
   where a price and a buy button drop in without moving anything else.
 

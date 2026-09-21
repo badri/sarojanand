@@ -171,14 +171,12 @@
         </div>
       </article>
 
-      <article class="card card-border border-base-300 bg-base-100">
+      <article class="card card-side card-border border-base-300 bg-base-100">
+        <figure class="w-32 shrink-0 sm:w-40">
+          <img src="images/partners-in-crime-cover.jpg" width="562" height="900" loading="lazy"
+               alt="Cover of Partners in Crime" class="h-full w-full object-cover">
+        </figure>
         <div class="card-body">
-          <div class="mb-4 flex items-start gap-4 border-s-2 border-base-300 ps-4">
-            <svg class="mt-1 size-5 shrink-0 text-base-content/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#i-palmtree"/></svg>
-            <p class="font-display text-xl leading-snug">
-              Some reckonings arrive quietly, wearing familiar faces.
-            </p>
-          </div>
           <h3 class="card-title flex-wrap font-display text-2xl uppercase">
             Partners in Crime <span class="badge badge-sm badge-soft">Out now</span>
           </h3>
@@ -186,12 +184,13 @@
             Psychological thriller · Andaman Islands
           </p>
           <p class="text-base-content/80">
-            Arun takes his wife and daughters to the islands for two quiet weeks. The island has other plans,
-            and some debts do not dissolve with time.
+            A family holiday in the Andamans, and a night in Pondicherry twenty years ago that Arun has never
+            told anyone about. Some betrayals take twenty years to surface.
           </p>
           <div class="card-actions mt-2">
-            <a href="books.html#partners-in-crime" class="btn btn-sm btn-outline font-mono uppercase tracking-widest">
-              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#i-shopping-cart"/></svg>Where to buy
+            <!-- TODO: point this at the Amazon link once it is supplied -->
+            <a href="books.html#partners-in-crime" class="btn btn-sm btn-primary font-mono uppercase tracking-widest">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="#i-shopping-cart"/></svg>Buy now
             </a>
           </div>
           <!-- STORE LATER: price + "Buy direct (EPUB)" button goes in this same card-actions row. -->
@@ -257,13 +256,15 @@
 
     <div class="mt-10 text-start">
       <!-- ============================================================
-           MAILERLITE SLOT — keep this container.
-           Delete everything inside it and paste the MailerLite embed code.
+           KIT SIGNUP — not wired yet.
+           This form needs Kit's form action URL and field names, taken
+           from the form's HTML embed. It stays styled in the site's own
+           design; no Kit JavaScript or CSS is loaded.
            This is the only signup form on the site; every other page
-           links here, so there is just one embed to maintain.
+           links here, so there is one form to maintain.
            ============================================================ -->
-      <div class="ml-form-embed">
-        <!-- mock preview below; it is not wired to anything yet -->
+      <div class="newsletter-form">
+        <!-- placeholder: submitting does nothing until the Kit action is added -->
         <form class="mx-auto max-w-md" onsubmit="return false">
           <fieldset class="fieldset">
             <label class="label font-mono text-xs uppercase tracking-widest" for="newsletter-email">Email address</label>
